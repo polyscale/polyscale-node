@@ -1,0 +1,68 @@
+{
+  "name": "@polyscale/polyscale-node",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/client.js",
+  "types": "lib/client.d.ts",
+  "private": true,
+  "engines": {
+    "node": ">=14.15.4"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polyscale/polyscale-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polyscale/polyscale-node/issues"
+  },
+  "homepage": "https://github.com/polyscale/polyscale-node#readme",
+  "scripts": {
+    "build": "run-s build:prepare build:client",
+    "build:client": "tsc --project ./tsconfig.json",
+    "build:prepare": "run-p build:prepare:clean",
+    "build:prepare:clean": "rimraf lib",
+    "dev": "echo \"obsolete\"",
+    "start": "echo \"obsolete\"",
+    "test": "run-s test:lint test:typescript test:unit",
+    "test:lint": "run-s test:lint:**",
+    "test:lint:eslint": "eslint .",
+    "test:lint:scriptlint": "scriptlint",
+    "test:typescript": "tsc --noEmit",
+    "test:unit": "LOG_LEVEL=silent NODE_ENV=test jest --runInBand --passWithNoTests --coverage",
+    "test:unit:watch": "LOG_LEVEL=silent NODE_ENV=test jest --runInBand --watch --coverage"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.22",
+    "@types/node-fetch": "^2.5.11",
+    "@types/rimraf": "^3.0.0",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "^7.18.0",
+    "eslint-config-peerigon": "^28.1.5",
+    "eslint-plugin-prefer-arrow": "^1.2.2",
+    "husky": "^5.0.8",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "scriptlint": "^2.1.2",
+    "ts-jest": "^26.4.4",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.1.3"
+  }
+}
