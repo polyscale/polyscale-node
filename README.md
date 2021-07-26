@@ -63,3 +63,5 @@ init();
 ```
 
 ## License
+
+polyscale-node is [MIT licensed](./LICENSE).
