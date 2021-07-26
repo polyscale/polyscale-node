@@ -5,7 +5,7 @@ Client for interacting with the PolyScale API.
 ## Example Usage
 
 ```typescript
-import PolyScale from "../src/client";
+import PolyScale from "@polyscale/polyscale-node";
 
 const polyscale = new PolyScale({
   url: "https://url-to-api.com",
