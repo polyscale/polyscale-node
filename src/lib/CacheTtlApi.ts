@@ -13,23 +13,28 @@ export type CacheTtl = {
 export class CacheTtlApi {
   constructor(private url: string, private apiKey: string) {}
 
-  getMany = async (cacheId: string) => {
+  getMany = async (workspaceId: string, cacheId: string) => {
     return fetchJson({
-      url: `${this.url}/v1/caches/${cacheId}/cache-ttls`,
+      url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls`,
       apiKey: this.apiKey,
       method: "GET",
     }) as Promise<Array<CacheTtl>>;
   };
 
-  getOne = async (cacheId: string, cacheTtlKey: string) => {
+  getOne = async (
+    workspaceId: string,
+    cacheId: string,
+    cacheTtlKey: string
+  ) => {
     return fetchJson({
-      url: `${this.url}/v1/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
+      url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
       apiKey: this.apiKey,
       method: "GET",
     }) as Promise<CacheTtl>;
   };
 
   create = async (
+    workspaceId: string,
     cacheId: string,
     cacheTtl: {
       name?: string;
@@ -39,7 +44,7 @@ export class CacheTtlApi {
     }
   ) => {
     return fetchJson({
-      url: `${this.url}/v1/caches/${cacheId}/cache-ttls`,
+      url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls`,
       apiKey: this.apiKey,
       body: cacheTtl,
       method: "POST",
@@ -47,6 +52,7 @@ export class CacheTtlApi {
   };
 
   update = async (
+    workspaceId: string,
     cacheId: string,
     cacheTtlKey: string,
     cacheTtl: {
@@ -55,16 +61,20 @@ export class CacheTtlApi {
     }
   ) => {
     return fetchJson({
-      url: `${this.url}/v1/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
+      url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
       apiKey: this.apiKey,
       body: cacheTtl,
       method: "PATCH",
     }) as Promise<CacheTtl>;
   };
 
-  delete = async (cacheId: string, cacheTtlKey: string) => {
+  delete = async (
+    workspaceId: string,
+    cacheId: string,
+    cacheTtlKey: string
+  ) => {
     return fetchJson({
-      url: `${this.url}/v1/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
+      url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
       apiKey: this.apiKey,
       method: "DELETE",
     }) as Promise<undefined>;
