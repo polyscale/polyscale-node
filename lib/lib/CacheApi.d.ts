@@ -12,16 +12,17 @@ export declare class CacheApi {
     private url;
     private apiKey;
     constructor(url: string, apiKey: string);
-    getMany: () => Promise<Cache[]>;
-    getOne: (cacheId: string) => Promise<Cache>;
-    create: (cache: {
+    getMany: (workspaceId: string) => Promise<Cache[]>;
+    getOne: (workspaceId: string, cacheId: string) => Promise<Cache>;
+    create: (workspaceId: string, cache: {
+        id?: string | undefined;
         name: string;
-        description?: string;
+        description?: string | undefined;
         host: string;
         port: number;
         workspaceId: string;
     }) => Promise<{
         id: string;
     }>;
-    delete: (cacheId: string) => Promise<undefined>;
+    delete: (workspaceId: string, cacheId: string) => Promise<undefined>;
 }

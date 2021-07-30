@@ -10,17 +10,17 @@ export declare class CacheTtlApi {
     private url;
     private apiKey;
     constructor(url: string, apiKey: string);
-    getMany: (cacheId: string) => Promise<CacheTtl[]>;
-    getOne: (cacheId: string, cacheTtlKey: string) => Promise<CacheTtl>;
-    create: (cacheId: string, cacheTtl: {
+    getMany: (workspaceId: string, cacheId: string) => Promise<CacheTtl[]>;
+    getOne: (workspaceId: string, cacheId: string, cacheTtlKey: string) => Promise<CacheTtl>;
+    create: (workspaceId: string, cacheId: string, cacheTtl: {
         name?: string;
         key: string;
         type: "QUERY" | "TEMPLATE" | "TABLE";
         value: number;
     }) => Promise<CacheTtl>;
-    update: (cacheId: string, cacheTtlKey: string, cacheTtl: {
+    update: (workspaceId: string, cacheId: string, cacheTtlKey: string, cacheTtl: {
         name?: string;
         value?: number;
     }) => Promise<CacheTtl>;
-    delete: (cacheId: string, cacheTtlKey: string) => Promise<undefined>;
+    delete: (workspaceId: string, cacheId: string, cacheTtlKey: string) => Promise<undefined>;
 }
