@@ -1,5 +1,29 @@
 import fetch from "node-fetch";
 
+class PolyScaleError extends Error {
+  code: string;
+  error: string;
+  statusCode: number;
+
+  constructor({
+    statusCode,
+    code,
+    error,
+    message,
+  }: {
+    statusCode: number;
+    code: string;
+    error: string;
+    message: string;
+  }) {
+    super(message);
+
+    this.code = code;
+    this.error = error;
+    this.statusCode = statusCode;
+  }
+}
+
 export const fetchJson = async ({
   url,
   method,
@@ -28,7 +52,12 @@ export const fetchJson = async ({
   if (response.status >= 400) {
     const parsedBody = await response.json();
 
-    throw new Error(parsedBody.message);
+    throw new PolyScaleError({
+      message: `${parsedBody.message}`,
+      error: parsedBody.error,
+      code: parsedBody.code,
+      statusCode: parsedBody.statusCode,
+    });
   }
 
   return response.json() as unknown;
