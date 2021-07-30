@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/polyscale/polyscale-node/compare/v0.0.4...v0.0.5) (2021-07-30)
+
+
+### Features
+
+* more concise function signatures ([ef94c5f](https://github.com/polyscale/polyscale-node/commit/ef94c5fc2618d50fd046d119e272ba2d808568e4))
+
+
+### Bug Fixes
+
+* add build files ([09e9e26](https://github.com/polyscale/polyscale-node/commit/09e9e26b97defca0c3dcd7bd1e02854a0b4370c4))
+
 ### [0.0.4](https://github.com/polyscale/polyscale-node/compare/v0.0.3...v0.0.4) (2021-07-29)
 
 
