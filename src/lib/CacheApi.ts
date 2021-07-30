@@ -14,7 +14,7 @@ export type Cache = {
 export class CacheApi {
   constructor(private url: string, private apiKey: string) {}
 
-  getMany = async (workspaceId: string) => {
+  getMany = async ({ workspaceId }: { workspaceId: string }) => {
     return fetchJson({
       url: `${this.url}/v1/workspaces/${workspaceId}/caches`,
       apiKey: this.apiKey,
@@ -22,7 +22,13 @@ export class CacheApi {
     }) as Promise<Array<Cache>>;
   };
 
-  getOne = async (workspaceId: string, cacheId: string) => {
+  getOne = async ({
+    workspaceId,
+    cacheId,
+  }: {
+    workspaceId: string;
+    cacheId: string;
+  }) => {
     return fetchJson({
       url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}`,
       apiKey: this.apiKey,
@@ -30,26 +36,32 @@ export class CacheApi {
     }) as Promise<Cache>;
   };
 
-  create = async (
-    workspaceId: string,
-    cache: {
-      id?: string;
-      name: string;
-      description?: string;
-      host: string;
-      port: number;
-      workspaceId: string;
-    }
-  ) => {
+  create = async ({
+    workspaceId,
+    ...rest
+  }: {
+    id?: string;
+    name: string;
+    description?: string;
+    host: string;
+    port: number;
+    workspaceId: string;
+  }) => {
     return fetchJson({
       url: `${this.url}/v1/workspaces/${workspaceId}/caches`,
       apiKey: this.apiKey,
-      body: cache,
+      body: { ...rest, workspaceId },
       method: "POST",
     }) as Promise<{ id: string }>;
   };
 
-  delete = async (workspaceId: string, cacheId: string) => {
+  delete = async ({
+    workspaceId,
+    cacheId,
+  }: {
+    workspaceId: string;
+    cacheId: string;
+  }) => {
     return fetchJson({
       url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}`,
       apiKey: this.apiKey,

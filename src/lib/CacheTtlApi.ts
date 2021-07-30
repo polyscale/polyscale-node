@@ -13,7 +13,13 @@ export type CacheTtl = {
 export class CacheTtlApi {
   constructor(private url: string, private apiKey: string) {}
 
-  getMany = async (workspaceId: string, cacheId: string) => {
+  getMany = async ({
+    workspaceId,
+    cacheId,
+  }: {
+    workspaceId: string;
+    cacheId: string;
+  }) => {
     return fetchJson({
       url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls`,
       apiKey: this.apiKey,
@@ -21,11 +27,15 @@ export class CacheTtlApi {
     }) as Promise<Array<CacheTtl>>;
   };
 
-  getOne = async (
-    workspaceId: string,
-    cacheId: string,
-    cacheTtlKey: string
-  ) => {
+  getOne = async ({
+    workspaceId,
+    cacheId,
+    cacheTtlKey,
+  }: {
+    workspaceId: string;
+    cacheId: string;
+    cacheTtlKey: string;
+  }) => {
     return fetchJson({
       url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
       apiKey: this.apiKey,
@@ -33,46 +43,62 @@ export class CacheTtlApi {
     }) as Promise<CacheTtl>;
   };
 
-  create = async (
-    workspaceId: string,
-    cacheId: string,
-    cacheTtl: {
-      name?: string;
-      key: string;
-      type: "QUERY" | "TEMPLATE" | "TABLE";
-      value: number;
-    }
-  ) => {
+  create = async (cacheTtl: {
+    name?: string;
+    key: string;
+    type: "QUERY" | "TEMPLATE" | "TABLE";
+    value: number;
+    workspaceId: string;
+    cacheId: string;
+  }) => {
     return fetchJson({
-      url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls`,
+      url: `${this.url}/v1/workspaces/${cacheTtl.workspaceId}/caches/${cacheTtl.cacheId}/cache-ttls`,
       apiKey: this.apiKey,
       body: cacheTtl,
       method: "POST",
     }) as Promise<CacheTtl>;
   };
 
-  update = async (
-    workspaceId: string,
-    cacheId: string,
-    cacheTtlKey: string,
-    cacheTtl: {
-      name?: string;
-      value?: number;
-    }
-  ) => {
+  update = async ({
+    workspaceId,
+    cacheId,
+    cacheTtlKey,
+    update,
+  }: {
+    workspaceId: string;
+    cacheId: string;
+    cacheTtlKey: string;
+    update:
+      | {
+          name: string;
+          value: number;
+        }
+      | {
+          name?: string;
+          value: number;
+        }
+      | {
+          name: string;
+          value?: number;
+        };
+  }) => {
     return fetchJson({
       url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
       apiKey: this.apiKey,
-      body: cacheTtl,
+      body: update,
       method: "PATCH",
     }) as Promise<CacheTtl>;
   };
 
-  delete = async (
-    workspaceId: string,
-    cacheId: string,
-    cacheTtlKey: string
-  ) => {
+  delete = async ({
+    workspaceId,
+    cacheId,
+    cacheTtlKey,
+  }: {
+    workspaceId: string;
+    cacheId: string;
+    cacheTtlKey: string;
+  }) => {
     return fetchJson({
       url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
       apiKey: this.apiKey,
