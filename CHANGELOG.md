@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/polyscale/polyscale-node/compare/v0.0.6...v0.0.7) (2021-08-02)
+
+
+### Bug Fixes
+
+* build for js ([f301164](https://github.com/polyscale/polyscale-node/commit/f3011648cd58a6145452a58f4d706df2c73ebab5))
+* husky precommit hook ([1e4d2d5](https://github.com/polyscale/polyscale-node/commit/1e4d2d5dad0a11c28fb85b20bec1d32a802d65df))
+
 ### [0.0.6](https://github.com/polyscale/polyscale-node/compare/v0.0.5...v0.0.6) (2021-07-30)
 
 
