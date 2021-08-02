@@ -3,4 +3,4 @@
 
 node_modules/lint-staged/bin/lint-staged.js && npm test
 
-npm run build:client && git add .
+npm run build && git add .
