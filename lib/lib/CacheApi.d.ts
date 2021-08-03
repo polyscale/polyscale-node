@@ -17,7 +17,6 @@ export declare class CacheApi {
         cacheId: string;
     }) => Promise<Cache>;
     create: ({ ...body }: {
-        id?: string;
         name: string;
         description?: string;
         host: string;

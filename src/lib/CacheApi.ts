@@ -33,7 +33,6 @@ export class CacheApi {
   create = async ({
     ...body
   }: {
-    id?: string;
     name: string;
     description?: string;
     host: string;
