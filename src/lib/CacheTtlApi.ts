@@ -13,31 +13,23 @@ export type CacheTtl = {
 export class CacheTtlApi {
   constructor(private url: string, private apiKey: string) {}
 
-  getMany = async ({
-    workspaceId,
-    cacheId,
-  }: {
-    workspaceId: string;
-    cacheId: string;
-  }) => {
+  getMany = async ({ cacheId }: { cacheId: string }) => {
     return fetchJson({
-      url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls`,
+      url: `${this.url}/v1/caches/${cacheId}/cache-ttls`,
       apiKey: this.apiKey,
       method: "GET",
     }) as Promise<Array<CacheTtl>>;
   };
 
   getOne = async ({
-    workspaceId,
     cacheId,
     cacheTtlKey,
   }: {
-    workspaceId: string;
     cacheId: string;
     cacheTtlKey: string;
   }) => {
     return fetchJson({
-      url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
+      url: `${this.url}/v1/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
       apiKey: this.apiKey,
       method: "GET",
     }) as Promise<CacheTtl>;
@@ -48,11 +40,10 @@ export class CacheTtlApi {
     key: string;
     type: "QUERY" | "TEMPLATE" | "TABLE";
     value: number;
-    workspaceId: string;
     cacheId: string;
   }) => {
     return fetchJson({
-      url: `${this.url}/v1/workspaces/${cacheTtl.workspaceId}/caches/${cacheTtl.cacheId}/cache-ttls`,
+      url: `${this.url}/v1/caches/${cacheTtl.cacheId}/cache-ttls`,
       apiKey: this.apiKey,
       body: cacheTtl,
       method: "POST",
@@ -60,12 +51,10 @@ export class CacheTtlApi {
   };
 
   update = async ({
-    workspaceId,
     cacheId,
     cacheTtlKey,
     update,
   }: {
-    workspaceId: string;
     cacheId: string;
     cacheTtlKey: string;
     update:
@@ -83,7 +72,7 @@ export class CacheTtlApi {
         };
   }) => {
     return fetchJson({
-      url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
+      url: `${this.url}/v1/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
       apiKey: this.apiKey,
       body: update,
       method: "PATCH",
@@ -91,16 +80,14 @@ export class CacheTtlApi {
   };
 
   delete = async ({
-    workspaceId,
     cacheId,
     cacheTtlKey,
   }: {
-    workspaceId: string;
     cacheId: string;
     cacheTtlKey: string;
   }) => {
     return fetchJson({
-      url: `${this.url}/v1/workspaces/${workspaceId}/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
+      url: `${this.url}/v1/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
       apiKey: this.apiKey,
       method: "DELETE",
     }) as Promise<undefined>;

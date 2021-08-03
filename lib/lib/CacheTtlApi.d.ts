@@ -10,12 +10,10 @@ export declare class CacheTtlApi {
     private url;
     private apiKey;
     constructor(url: string, apiKey: string);
-    getMany: ({ workspaceId, cacheId, }: {
-        workspaceId: string;
+    getMany: ({ cacheId }: {
         cacheId: string;
     }) => Promise<CacheTtl[]>;
-    getOne: ({ workspaceId, cacheId, cacheTtlKey, }: {
-        workspaceId: string;
+    getOne: ({ cacheId, cacheTtlKey, }: {
         cacheId: string;
         cacheTtlKey: string;
     }) => Promise<CacheTtl>;
@@ -24,11 +22,9 @@ export declare class CacheTtlApi {
         key: string;
         type: "QUERY" | "TEMPLATE" | "TABLE";
         value: number;
-        workspaceId: string;
         cacheId: string;
     }) => Promise<CacheTtl>;
-    update: ({ workspaceId, cacheId, cacheTtlKey, update, }: {
-        workspaceId: string;
+    update: ({ cacheId, cacheTtlKey, update, }: {
         cacheId: string;
         cacheTtlKey: string;
         update: {
@@ -42,8 +38,7 @@ export declare class CacheTtlApi {
             value?: number;
         };
     }) => Promise<CacheTtl>;
-    delete: ({ workspaceId, cacheId, cacheTtlKey, }: {
-        workspaceId: string;
+    delete: ({ cacheId, cacheTtlKey, }: {
         cacheId: string;
         cacheTtlKey: string;
     }) => Promise<undefined>;

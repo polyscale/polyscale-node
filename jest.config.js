@@ -11,11 +11,8 @@ module.exports = {
     setupFiles: [],
     testPathIgnorePatterns: [
       "node_modules",
-      "dist",
-      "lib"
     ],
     coveragePathIgnorePatterns: [
-      "src/proto",
       "/node_modules/"
     ]
   }

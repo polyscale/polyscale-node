@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-class PolyScaleError extends Error {
+export class PolyScaleError extends Error {
   code: string;
   error: string;
   statusCode: number;

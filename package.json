@@ -34,8 +34,8 @@
     "test:lint:eslint": "eslint .",
     "test:lint:scriptlint": "scriptlint",
     "test:typescript": "tsc --noEmit",
-    "test:unit": "LOG_LEVEL=silent NODE_ENV=test jest --runInBand --passWithNoTests --coverage",
-    "test:unit:watch": "LOG_LEVEL=silent NODE_ENV=test jest --runInBand --watch --coverage",
+    "test:unit": "LOG_LEVEL=silent NODE_ENV=test jest --runInBand --coverage",
+    "test:unit:watch": "NODE_ENV=test jest --runInBand --watch --coverage",
     "postinstall": "sh ./scripts/npm/postinstall.sh"
   },
   "dependencies": {

@@ -12,25 +12,20 @@ export declare class CacheApi {
     private url;
     private apiKey;
     constructor(url: string, apiKey: string);
-    getMany: ({ workspaceId }: {
-        workspaceId: string;
-    }) => Promise<Cache[]>;
-    getOne: ({ workspaceId, cacheId, }: {
-        workspaceId: string;
+    getMany: () => Promise<Cache[]>;
+    getOne: ({ cacheId }: {
         cacheId: string;
     }) => Promise<Cache>;
-    create: ({ workspaceId, ...rest }: {
-        id?: string | undefined;
+    create: ({ ...body }: {
+        id?: string;
         name: string;
-        description?: string | undefined;
+        description?: string;
         host: string;
         port: number;
-        workspaceId: string;
     }) => Promise<{
         id: string;
     }>;
-    delete: ({ workspaceId, cacheId, }: {
-        workspaceId: string;
+    delete: ({ cacheId }: {
         cacheId: string;
     }) => Promise<undefined>;
 }
