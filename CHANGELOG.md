@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/polyscale/polyscale-node/compare/v0.0.7...v0.0.8) (2021-08-03)
+
+
+### Bug Fixes
+
+* drop id from create cache ([1367de2](https://github.com/polyscale/polyscale-node/commit/1367de29b3a66905b4e08bcab215a5de2a302a15))
+* drop workspace id ([4f98a63](https://github.com/polyscale/polyscale-node/commit/4f98a63f01dd3558984c4868f21a371193cdddbf))
+
 ### [0.0.7](https://github.com/polyscale/polyscale-node/compare/v0.0.6...v0.0.7) (2021-08-02)
 
 
