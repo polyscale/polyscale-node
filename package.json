@@ -28,7 +28,6 @@
     "build:prepare": "run-p build:prepare:clean",
     "build:prepare:clean": "rimraf lib",
     "dev": "echo \"obsolete\"",
-    "postinstall": "sh ./scripts/npm/postinstall.sh",
     "start": "echo \"obsolete\"",
     "test": "run-s test:lint test:typescript test:unit",
     "test:lint": "run-s test:lint:**",
