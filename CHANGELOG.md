@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/polyscale/polyscale-node/compare/v0.0.8...v0.0.9) (2021-08-03)
+
+
+### Bug Fixes
+
+* removed postinstall script ([d0b70eb](https://github.com/polyscale/polyscale-node/commit/d0b70eb84f69a7d134b057dbacd65863cbb0856d))
+
 ### [0.0.8](https://github.com/polyscale/polyscale-node/compare/v0.0.7...v0.0.8) (2021-08-03)
 
 
