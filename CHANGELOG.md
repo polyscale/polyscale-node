@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/polyscale/polyscale-node/compare/v0.0.10...v0.0.11) (2021-10-15)
+
+
+### Features
+
+* purge cache ([f0dc6e5](https://github.com/polyscale/polyscale-node/commit/f0dc6e5a6bbf0a4d734d4f2fe3dea78a96f7a62e))
+
 ### [0.0.10](https://github.com/polyscale/polyscale-node/compare/v0.0.9...v0.0.10) (2021-10-15)
 
 ### [0.0.9](https://github.com/polyscale/polyscale-node/compare/v0.0.8...v0.0.9) (2021-08-03)
