@@ -24,6 +24,9 @@ export declare class CacheApi {
     }) => Promise<{
         id: string;
     }>;
+    purge: ({ cacheId }: {
+        cacheId: string;
+    }) => Promise<unknown>;
     delete: ({ cacheId }: {
         cacheId: string;
     }) => Promise<undefined>;

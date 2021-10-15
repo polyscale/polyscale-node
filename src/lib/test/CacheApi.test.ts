@@ -55,6 +55,16 @@ describe("CacheApi", () => {
     });
   });
 
+  test("CacheApi.purge", async () => {
+    await api.purge({ cacheId: ID });
+
+    expect(fetchJson).toHaveBeenCalledWith({
+      url: `${URL}/v1/caches/${ID}/purge`,
+      apiKey: KEY,
+      method: "PUT",
+    });
+  });
+
   test("CacheApi.delete", async () => {
     await api.delete({ cacheId: ID });
 

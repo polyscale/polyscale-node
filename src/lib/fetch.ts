@@ -31,7 +31,7 @@ export const fetchJson = async ({
   body,
 }: {
   url: string;
-  method: "GET" | "POST" | "PATCH" | "DELETE";
+  method: "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
   apiKey: string;
   body?: Record<string, any>;
 }) => {
