@@ -62,6 +62,7 @@ describe("CacheApi", () => {
       url: `${URL}/v1/caches/${ID}/purge`,
       apiKey: KEY,
       method: "PUT",
+      body: {},
     });
   });
 

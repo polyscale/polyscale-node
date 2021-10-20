@@ -51,6 +51,7 @@ export class CacheApi {
       url: `${this.url}/v1/caches/${cacheId}/purge`,
       apiKey: this.apiKey,
       method: "PUT",
+      body: {},
     });
   };
 
