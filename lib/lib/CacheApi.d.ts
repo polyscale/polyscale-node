@@ -6,6 +6,9 @@ export declare type Cache = {
     description?: string;
     host: string;
     port: number;
+    database: "mysql" | "mariadb" | "postgres";
+    cachingEnabled: boolean;
+    autoEnabled: boolean;
     createdAt: string;
 };
 export declare class CacheApi {
@@ -17,10 +20,13 @@ export declare class CacheApi {
         cacheId: string;
     }) => Promise<Cache>;
     create: ({ ...body }: {
-        name: string;
-        description?: string;
-        host: string;
-        port: number;
+        name: Cache["name"];
+        description?: Cache["description"];
+        host: Cache["host"];
+        port: Cache["port"];
+        database: Cache["database"];
+        cachingEnabled: Cache["cachingEnabled"];
+        autoEnabled: Cache["autoEnabled"];
     }) => Promise<{
         id: string;
     }>;

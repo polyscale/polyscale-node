@@ -1,4 +1,4 @@
-import { CacheApi } from "../CacheApi";
+import { Cache, CacheApi } from "../CacheApi";
 import { fetchJson } from "../fetch";
 
 const URL = "some-url";
@@ -43,6 +43,9 @@ describe("CacheApi", () => {
       descrption: "some-description",
       host: "some-host",
       port: 3000,
+      database: "mysql" as Cache["database"],
+      cachingEnabled: true,
+      autoEnabled: true,
     };
 
     await api.create(BODY);
