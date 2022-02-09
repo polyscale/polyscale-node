@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/polyscale/polyscale-node/compare/v0.0.14...v0.0.15) (2022-02-09)
+
+
+### Bug Fixes
+
+* support auto/manual ttl ([6358bc8](https://github.com/polyscale/polyscale-node/commit/6358bc8d6ff24661e4594777f6f510736405e18e))
+
 ### [0.0.14](https://github.com/polyscale/polyscale-node/compare/v0.0.13...v0.0.14) (2022-02-09)
 
 
