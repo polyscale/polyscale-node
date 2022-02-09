@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://github.com/polyscale/polyscale-node/compare/v0.0.13...v0.0.14) (2022-02-09)
+
+
+### Features
+
+* defaultCachingBehaviour ([648b6c0](https://github.com/polyscale/polyscale-node/commit/648b6c04cb87df2f19eea0e7f81f724eb5dd8edd))
+
 ### [0.0.13](https://github.com/polyscale/polyscale-node/compare/v0.0.12...v0.0.13) (2022-01-25)
 
 
