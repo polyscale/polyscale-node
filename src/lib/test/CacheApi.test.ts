@@ -40,12 +40,12 @@ describe("CacheApi", () => {
   test("CacheApi.create", async () => {
     const BODY = {
       name: "some-name",
-      descrption: "some-description",
+      description: "some-description",
       host: "some-host",
       port: 3000,
       database: "mysql" as Cache["database"],
       cachingEnabled: true,
-      autoEnabled: true,
+      defaultCachingBehaviour: "autoCached" as "autoCached",
     };
 
     await api.create(BODY);

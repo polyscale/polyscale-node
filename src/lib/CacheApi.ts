@@ -10,7 +10,7 @@ export type Cache = {
   port: number;
   database: "mysql" | "mariadb" | "postgres";
   cachingEnabled: boolean;
-  autoEnabled: boolean;
+  defaultCachingBehaviour: "autoCached" | "uncached";
   createdAt: string;
 };
 
@@ -42,7 +42,7 @@ export class CacheApi {
     port: Cache["port"];
     database: Cache["database"];
     cachingEnabled: Cache["cachingEnabled"];
-    autoEnabled: Cache["autoEnabled"];
+    defaultCachingBehaviour: Cache["defaultCachingBehaviour"];
   }) => {
     return fetchJson({
       url: `${this.url}/v1/caches`,
