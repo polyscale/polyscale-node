@@ -1,11 +1,21 @@
-export declare type TtlType = "QUERY" | "TEMPLATE" | "TABLE";
+export declare type TtlType = "AUTO" | "MANUAL" | "QUERY" | "TEMPLATE" | "TABLE";
+declare type AutoTtl = {
+    key: string;
+    type: "AUTO";
+    cacheId: string;
+};
+declare type ManualTtl = {
+    key: string;
+    type: "MANUAL";
+    cacheId: string;
+};
 export declare type CacheTtl = {
     value: number;
     key: string;
-    type: TtlType;
+    type: "QUERY" | "TEMPLATE" | "TABLE";
     cacheId: string;
     name?: string;
-};
+} | AutoTtl | ManualTtl;
 export declare class CacheTtlApi {
     private url;
     private apiKey;
@@ -17,13 +27,7 @@ export declare class CacheTtlApi {
         cacheId: string;
         cacheTtlKey: string;
     }) => Promise<CacheTtl>;
-    create: (cacheTtl: {
-        name?: string;
-        key: string;
-        type: "QUERY" | "TEMPLATE" | "TABLE";
-        value: number;
-        cacheId: string;
-    }) => Promise<CacheTtl>;
+    create: (cacheTtl: CacheTtl) => Promise<CacheTtl>;
     update: ({ cacheId, cacheTtlKey, update, }: {
         cacheId: string;
         cacheTtlKey: string;
@@ -38,8 +42,10 @@ export declare class CacheTtlApi {
             value?: number;
         };
     }) => Promise<CacheTtl>;
-    delete: ({ cacheId, cacheTtlKey, }: {
+    delete: ({ cacheId, cacheTtlKey, cacheTtlType, }: {
         cacheId: string;
         cacheTtlKey: string;
+        cacheTtlType: TtlType;
     }) => Promise<undefined>;
 }
+export {};

@@ -58,10 +58,14 @@ describe("CacheApi", () => {
   });
 
   test("CacheApi.delete", async () => {
-    await api.delete({ cacheId: ID, cacheTtlKey: TTL_KEY });
+    await api.delete({
+      cacheId: ID,
+      cacheTtlKey: TTL_KEY,
+      cacheTtlType: "TEMPLATE",
+    });
 
     expect(fetchJson).toHaveBeenCalledWith({
-      url: `${URL}/v1/caches/${ID}/cache-ttls/${TTL_KEY}`,
+      url: `${URL}/v1/caches/${ID}/cache-ttls/TEMPLATE/${TTL_KEY}`,
       apiKey: KEY,
       method: "DELETE",
     });

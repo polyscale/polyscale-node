@@ -1,14 +1,29 @@
 import { fetchJson } from "./fetch";
 
-export type TtlType = "QUERY" | "TEMPLATE" | "TABLE";
+export type TtlType = "AUTO" | "MANUAL" | "QUERY" | "TEMPLATE" | "TABLE";
 
-export type CacheTtl = {
-  value: number;
+type AutoTtl = {
   key: string;
-  type: TtlType;
+  type: "AUTO";
   cacheId: string;
-  name?: string;
 };
+
+type ManualTtl = {
+  key: string;
+  type: "MANUAL";
+  cacheId: string;
+};
+
+export type CacheTtl =
+  | {
+      value: number;
+      key: string;
+      type: "QUERY" | "TEMPLATE" | "TABLE";
+      cacheId: string;
+      name?: string;
+    }
+  | AutoTtl
+  | ManualTtl;
 
 export class CacheTtlApi {
   constructor(private url: string, private apiKey: string) {}
@@ -35,13 +50,7 @@ export class CacheTtlApi {
     }) as Promise<CacheTtl>;
   };
 
-  create = async (cacheTtl: {
-    name?: string;
-    key: string;
-    type: "QUERY" | "TEMPLATE" | "TABLE";
-    value: number;
-    cacheId: string;
-  }) => {
+  create = async (cacheTtl: CacheTtl) => {
     return fetchJson({
       url: `${this.url}/v1/caches/${cacheTtl.cacheId}/cache-ttls`,
       apiKey: this.apiKey,
@@ -82,12 +91,14 @@ export class CacheTtlApi {
   delete = async ({
     cacheId,
     cacheTtlKey,
+    cacheTtlType,
   }: {
     cacheId: string;
     cacheTtlKey: string;
+    cacheTtlType: TtlType;
   }) => {
     return fetchJson({
-      url: `${this.url}/v1/caches/${cacheId}/cache-ttls/${cacheTtlKey}`,
+      url: `${this.url}/v1/caches/${cacheId}/cache-ttls/${cacheTtlType}/${cacheTtlKey}`,
       apiKey: this.apiKey,
       method: "DELETE",
     }) as Promise<undefined>;
