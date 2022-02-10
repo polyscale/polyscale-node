@@ -1,6 +1,6 @@
 {
   "name": "@polyscale/polyscale-node",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
