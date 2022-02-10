@@ -30,6 +30,7 @@
     "dev": "echo \"obsolete\"",
     "start": "echo \"obsolete\"",
     "test": "run-s test:lint test:typescript test:unit",
+    "test:example": "ts-node ./example/example.ts",
     "test:lint": "run-s test:lint:**",
     "test:lint:eslint": "eslint .",
     "test:lint:scriptlint": "scriptlint",
