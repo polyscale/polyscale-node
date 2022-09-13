@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.17](https://github.com/polyscale/polyscale-node/compare/v0.0.16...v0.0.17) (2022-09-13)
+
+
+### Features
+
+* mssql graphql caches ([ef2ea3f](https://github.com/polyscale/polyscale-node/commit/ef2ea3fe20003d6fbbc82656b3acf5fd00b2fc52))
+
 ### [0.0.16](https://github.com/polyscale/polyscale-node/compare/v0.0.15...v0.0.16) (2022-02-10)
 
 
