@@ -100,11 +100,11 @@ describe("fetch", () => {
           },
         });
 
-        expect(error).toBeInstanceOf(PolyScaleError);
-        expect(error.statusCode).toEqual(400);
-        expect(error.code).toEqual("some-code");
-        expect(error.error).toEqual("some-error");
-        expect(error.message).toEqual("some-message");
+        expect(error as PolyScaleError).toBeInstanceOf(PolyScaleError);
+        expect((error as PolyScaleError).statusCode).toEqual(400);
+        expect((error as PolyScaleError).code).toEqual("some-code");
+        expect((error as PolyScaleError).error).toEqual("some-error");
+        expect((error as PolyScaleError).message).toEqual("some-message");
       }
     });
   });

@@ -6,7 +6,7 @@ export declare type Cache = {
     description?: string;
     host: string;
     port: number;
-    database: "mysql" | "mariadb" | "postgres";
+    database: "mysql" | "mariadb" | "postgres" | "mssql" | "graphql";
     cachingEnabled: boolean;
     defaultCachingBehaviour: "autoCached" | "uncached";
     createdAt: string;
