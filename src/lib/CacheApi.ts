@@ -12,6 +12,7 @@ export type Cache = {
   cachingEnabled: boolean;
   defaultCachingBehaviour: "autoCached" | "uncached";
   createdAt: string;
+  connectionUriTemplate: string;
 };
 
 export class CacheApi {
