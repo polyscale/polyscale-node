@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.22](https://github.com/polyscale/polyscale-node/compare/v0.0.21...v0.0.22) (2023-06-02)
+
+
+### Bug Fixes
+
+* add build files ([fcab633](https://github.com/polyscale/polyscale-node/commit/fcab63355fd226f466b0eb334ace038fdb7f9d15))
+
 ### [0.0.21](https://github.com/polyscale/polyscale-node/compare/v0.0.20...v0.0.21) (2023-06-02)
 
 
