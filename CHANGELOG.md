@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/polyscale/polyscale-node/compare/v0.0.20...v0.0.21) (2023-06-02)
+
+
+### Features
+
+* add new property type ([167742e](https://github.com/polyscale/polyscale-node/commit/167742ee208b9de838bc918837bce8248827cf5a))
+* publish to npm ([7353b20](https://github.com/polyscale/polyscale-node/commit/7353b206a8f737d47543db9da9d979670448a2f2))
+
 ### [0.0.20](https://github.com/polyscale/polyscale-node/compare/v0.0.19...v0.0.20) (2022-09-14)
 
 ### [0.0.19](https://github.com/polyscale/polyscale-node/compare/v0.0.18...v0.0.19) (2022-09-13)
