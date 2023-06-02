@@ -4,7 +4,6 @@
   "description": "",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
-  "private": true,
   "engines": {
     "node": ">=14.15.4"
   },
