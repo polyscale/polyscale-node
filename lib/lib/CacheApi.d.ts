@@ -10,6 +10,7 @@ export declare type Cache = {
     cachingEnabled: boolean;
     defaultCachingBehaviour: "autoCached" | "uncached";
     createdAt: string;
+    connectionUriTemplate: string;
 };
 export declare class CacheApi {
     private url;

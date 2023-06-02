@@ -35,7 +35,8 @@
     "test:lint:scriptlint": "scriptlint",
     "test:typescript": "tsc --noEmit",
     "test:unit": "LOG_LEVEL=silent NODE_ENV=test jest --runInBand --coverage",
-    "test:unit:watch": "NODE_ENV=test jest --runInBand --watch --coverage"
+    "test:unit:watch": "NODE_ENV=test jest --runInBand --watch --coverage",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
