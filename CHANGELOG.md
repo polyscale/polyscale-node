@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.23](https://github.com/polyscale/polyscale-node/compare/v0.0.22...v0.0.23) (2023-10-04)
+
+
+### Features
+
+* bump node-fetch ([66be179](https://github.com/polyscale/polyscale-node/commit/66be17938826c4699e0ca1a386a3dea9f99c854b))
+
 ### [0.0.22](https://github.com/polyscale/polyscale-node/compare/v0.0.21...v0.0.22) (2023-06-02)
 
 
